@@ -7,7 +7,7 @@ import { data } from "../data/data";
 export function getPlanetsWithNoMoons(data) {
   // Your code goes here...
   // cannot use hasOwnProperty
-  return  data.planets.filter((planet) => !planet.hasOwnProperty("moonsCount")).map((planet) => planet.name)
+  return  data.planets.filter((planet) => !planet.moonsCount).map((planet) => planet.name)
 }
 
 

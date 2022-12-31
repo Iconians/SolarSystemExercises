@@ -6,8 +6,14 @@ import { data } from "../data/data";
 
 export function findPlanetNameByMoon(data, moonName) {
   // Your code goes here...
-  // cannot use includes()
-  // const [planetName] = data.planets.filter((planet) => planet.moons ? planet.moons.includes("Triton") : null).map((planet) => planet.name)
+  const [planetName] = data.planets.filter((planet) => {
+  if (planet.moons !== undefined) {
+    const arr = planet.moons.filter((moon) => moon === moonName)
+    if (arr.length === 1) {
+      return arr
+    }
+  }
+}).map((planet) => planet.name)
   return planetName
 }
 
